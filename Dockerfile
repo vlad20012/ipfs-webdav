@@ -16,4 +16,6 @@ RUN cargo build --release --bin ipfs-webdav
 FROM debian:bullseye-slim AS runtime
 WORKDIR app
 COPY --from=builder /app/target/release/ipfs-webdav /usr/local/bin/ipfs-webdav
+ENV IPFS_WEBDAV_LISTEN="0.0.0.0:4918"
+EXPOSE 4918
 CMD ["/usr/local/bin/ipfs-webdav"]

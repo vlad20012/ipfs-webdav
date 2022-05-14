@@ -16,6 +16,19 @@ Currently, IPFS-WebDAV exposes `/ipfs` and `/ipns` namespaces in read-only mode,
 [WebDAV]: https://en.wikipedia.org/wiki/WebDAV
 [MFS]: https://docs.ipfs.io/concepts/file-systems/
 
+## Advantages over IPFS mount
+
+It's no secret that IPFS [can mount] `/ipfs` and `/ipns` out-of-the-box.
+However, using `ipfs-webdav` has several advantages:
+- WebDAV is supported natively in most operating systems
+- You can run single `IPFS` + `ipfs-webdav` node and connect to it from multiple hosts using WebDAV.
+  This is useful in LAN or in cloud
+- `ipfs-webdav` provide read-write access to [MFS] 
+- You can use `ipfs name publish` along with accessing `/ipns` via WebDAV. 
+
+[can mount]: https://github.com/ipfs/go-ipfs/blob/a72753bade90c4a48c29aba6c0dc81c44785e9d2/docs/fuse.md
+[MFS]: https://docs.ipfs.io/concepts/file-systems/
+
 ## Installation
 
 ### Docker

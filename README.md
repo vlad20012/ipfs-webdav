@@ -24,6 +24,11 @@ Currently, IPFS-WebDAV exposes `/ipfs` and `/ipns` namespaces in read-only mode,
 
 Follow the guide on the [official docker image page](https://hub.docker.com/r/vlad20012/ipfs-webdav).
 
+### Installation from binary distribution
+
+You can find `ipfs-webdav` binaries on the [releases page](https://github.com/vlad20012/ipfs-webdav/releases).
+Then just run it (`./ipfs-webdav_linux-x86-64`)
+
 ### Installation From Source
 
 Run `cargo build --release`, then find the binary in `target/release/ipfs-webdav`

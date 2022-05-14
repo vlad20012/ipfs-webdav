@@ -33,6 +33,19 @@ Then just run it (`./ipfs-webdav_linux-x86-64`)
 
 Run `cargo build --release`, then find the binary in `target/release/ipfs-webdav`
 
+## Configuration
+
+Currently, `ipfs-webdav` can be configured only using environment variables.
+- `IPFS_WEBDAV_API_ENDPOINT_URL` - specifies URL of an IPFS RPC. For example, `http://localhost:5001`.
+  If not specified, `ipfs-webdav` tries to read the URL from `~/.ipfs/api` file and falls back to
+  `http://localhost:5001` if the file is not found.
+- `IPFS_WEBDAV_LISTEN` - Specifies listen WebDAV address in `host:port` format. 
+  For example, `localhost:4918` or `0.0.0.0:4918`. Default value is `127.0.0.1:4918`
+- `IPFS_WEBDAV_LOG` - specifies `ipfs-webdav` log level. Possible values: `error`, `warn`, `info`, `debug`, `trace`.
+  Default value is `info`.
+
+Example: `IPFS_WEBDAV_API_ENDPOINT_URL="http://localhost:5001" IPFS_WEBDAV_LISTEN="0.0.0.0:4918" ./ipfs-webdav`
+
 ## Mounting WebDAV filesystem
 
 ### Linux

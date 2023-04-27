@@ -13,7 +13,7 @@ RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
 RUN cargo build --release --bin ipfs-webdav
 
-FROM debian:bullseye-slim AS runtime
+FROM debian:bullseye-20230411-slim AS runtime
 WORKDIR app
 COPY --from=builder /app/target/release/ipfs-webdav /usr/local/bin/ipfs-webdav
 ENV IPFS_WEBDAV_LISTEN="0.0.0.0:4918"

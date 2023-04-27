@@ -1,4 +1,7 @@
+.git
+.github
 target
 .idea
 *.iml
 Dockerfile
+*.md
